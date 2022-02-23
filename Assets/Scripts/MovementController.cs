@@ -61,5 +61,15 @@ public class MovementController : MonoBehaviour
             playerCamera.transform.localRotation = Quaternion.Euler(rotation.x, 0, 0);
             transform.eulerAngles = new Vector2(0, rotation.y);
         }
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed += 10;
+        }
+
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed -= 10;
+        }
     }
 }
