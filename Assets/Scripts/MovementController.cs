@@ -28,6 +28,10 @@ public class MovementController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         rotation.y = transform.eulerAngles.y;
+        
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+
     }
 
     void Update()
@@ -81,6 +85,11 @@ public class MovementController : MonoBehaviour
         if(other.gameObject.tag == "WinZone")
         {
             SceneManager.LoadScene(SceneToLoad);
+        }
+
+        else if(other.gameObject.tag == "Danger")
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
     }
 }
