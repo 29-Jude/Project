@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 3433373906212057647}
   - component: {fileID: 1566893562438251306}
   m_Layer: 0
-  m_Name: Platform
-  m_TagString: Untagged
+  m_Name: Win
+  m_TagString: WinZone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 252181124934934411}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.38509187, y: 0.51, z: 5.719}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 90da058d05d7af347a1371a030ec7f58, type: 2}
+  - {fileID: 2100000, guid: 04098d419ef9072459990b41c8dc512d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

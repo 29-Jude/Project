@@ -1,17 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(CharacterController))]
 
 public class MovementController : MonoBehaviour
 {
     public float speed = 7.5f;
+    public float sprintSpeed;
     public float jumpSpeed = 8.0f;
     public float gravity = 20.0f;
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
+    public string SceneToLoad;
 
     CharacterController characterController;
     [HideInInspector]
@@ -64,12 +67,20 @@ public class MovementController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed += 10;
+            speed += sprintSpeed;
         }
 
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            speed -= 10;
+            speed -= sprintSpeed;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "WinZone")
+        {
+            SceneManager.LoadScene(SceneToLoad);
         }
     }
 }
