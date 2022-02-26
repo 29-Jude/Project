@@ -14,7 +14,8 @@ public class MovementController : MonoBehaviour
     public Camera playerCamera;
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
-    public string SceneToLoad;
+    public string WinScene;
+    public string LoseScene;
 
     CharacterController characterController;
     [HideInInspector]
@@ -84,12 +85,12 @@ public class MovementController : MonoBehaviour
     {
         if(other.gameObject.tag == "WinZone")
         {
-            SceneManager.LoadScene(SceneToLoad);
+            SceneManager.LoadScene(WinScene);
         }
 
         else if(other.gameObject.tag == "Danger")
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+            SceneManager.LoadScene(LoseScene);
         }
     }
 }
