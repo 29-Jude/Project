@@ -295,7 +295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 518e9cb329e0d1047bdf025869e64863, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneToLoad: LevelSandbox
+  SceneToLoad: Tutorial
 --- !u!1 &1116618984
 GameObject:
   m_ObjectHideFlags: 0

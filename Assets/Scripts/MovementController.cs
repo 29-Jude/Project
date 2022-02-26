@@ -15,7 +15,6 @@ public class MovementController : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
     public string WinScene;
-    public string LoseScene;
 
     CharacterController characterController;
     [HideInInspector]
@@ -90,7 +89,7 @@ public class MovementController : MonoBehaviour
 
         else if(other.gameObject.tag == "Danger")
         {
-            SceneManager.LoadScene(LoseScene);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
         }
     }
 }
