@@ -15,6 +15,7 @@ public class MovementController : MonoBehaviour
     public float lookSpeed = 2.0f;
     public float lookXLimit = 45.0f;
     public string WinScene;
+    public Animator anim;
 
     
 
@@ -29,6 +30,7 @@ public class MovementController : MonoBehaviour
     void Start()
     {
         characterController = GetComponent<CharacterController>();
+        anim.GetComponent<Animator>();
         rotation.y = transform.eulerAngles.y;
         
         Cursor.lockState = CursorLockMode.Locked;
@@ -70,16 +72,28 @@ public class MovementController : MonoBehaviour
             rotation.x = Mathf.Clamp(rotation.x, -lookXLimit, lookXLimit);
             playerCamera.transform.localRotation = Quaternion.Euler(rotation.x, 0, 0);
             transform.eulerAngles = new Vector2(0, rotation.y);
+
+            anim.SetBool("CanMove", true);
         }
+
+        if(speed >= 1)
+        {
+            anim.SetBool("CanMove", true);
+        }
+
+        else
+            anim.SetBool("CanMove", false);
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed += sprintSpeed;
+            anim.SetBool("Sprint", true);
         }
 
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed -= sprintSpeed;
+            anim.SetBool("Sprint", false);
         }
     }
 
