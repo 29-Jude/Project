@@ -982,6 +982,21 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3854536536445089580, guid: 9606eb5143ee91a4c92b8f84a041340d,
         type: 3}
+      propertyPath: m_LocalScale.x
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854536536445089580, guid: 9606eb5143ee91a4c92b8f84a041340d,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854536536445089580, guid: 9606eb5143ee91a4c92b8f84a041340d,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3854536536445089580, guid: 9606eb5143ee91a4c92b8f84a041340d,
+        type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.35828647
       objectReference: {fileID: 0}
@@ -1097,7 +1112,7 @@ PrefabInstance:
     - target: {fileID: 7746390424450270101, guid: 2820eaadc4b8b8649b74b561be406258,
         type: 3}
       propertyPath: WinScene
-      value: Win
+      value: Level 1
       objectReference: {fileID: 0}
     - target: {fileID: 7746390424450270101, guid: 2820eaadc4b8b8649b74b561be406258,
         type: 3}
