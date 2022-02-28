@@ -16,6 +16,8 @@ public class MovementController : MonoBehaviour
     public float lookXLimit = 45.0f;
     public string WinScene;
 
+    
+
     CharacterController characterController;
     [HideInInspector]
     public Vector3 moveDirection = Vector3.zero;
@@ -50,6 +52,7 @@ public class MovementController : MonoBehaviour
                 moveDirection.y = jumpSpeed;
             }
         }
+
 
         // Apply gravity. Gravity is multiplied by deltaTime twice (once here, and once below
         // when the moveDirection is multiplied by deltaTime). This is because gravity should be applied
