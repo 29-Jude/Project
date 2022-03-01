@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(CharacterController))]
 
@@ -16,6 +17,8 @@ public class MovementController : MonoBehaviour
     public float lookXLimit = 45.0f;
     public string WinScene;
     public Animator anim;
+    public Text CoinsCollected;
+    public float Coins = 0;
 
     
 
@@ -35,6 +38,8 @@ public class MovementController : MonoBehaviour
         
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        CoinsCollected.text = "Coins Collected: " + Coins;
 
     }
 
@@ -95,6 +100,8 @@ public class MovementController : MonoBehaviour
             speed -= sprintSpeed;
             anim.SetBool("Sprint", false);
         }
+
+        CoinsCollected.text = "Coins Collected: " + Coins;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -107,6 +114,12 @@ public class MovementController : MonoBehaviour
         else if(other.gameObject.tag == "Danger")
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 0);
+        }
+
+        else if(other.gameObject.tag == "Coin")
+        {
+            Destroy(other.gameObject);
+            Coins += 1;
         }
     }
 }
