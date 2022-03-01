@@ -101,6 +101,11 @@ public class MovementController : MonoBehaviour
             anim.SetBool("Sprint", false);
         }
 
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
         CoinsCollected.text = "Coins Collected: " + Coins;
     }
 
